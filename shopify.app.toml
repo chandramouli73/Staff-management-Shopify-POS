@@ -1,0 +1,34 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "640df975e4dc456ccaaf777674d0bdde"
+name = "Shopiee-POS"
+application_url = "https://limitation-alto-inspiration-doing.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-04"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products, write_customers"
+
+[auth]
+redirect_urls = [
+  "https://limitation-alto-inspiration-doing.trycloudflare.com/api/auth"
+]
+
+[app_proxy]
+url = "https://limitation-alto-inspiration-doing.trycloudflare.com/api/pos-search"
+subpath = "pos-products"
+prefix = "apps"

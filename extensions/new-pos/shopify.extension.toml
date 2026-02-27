@@ -1,0 +1,19 @@
+api_version = "2025-10"
+
+[[extensions]]
+type = "ui_extension"
+name = "new-pos"
+uid = "41b0e4d0-5467-6c0b-cf0f-cb3104f63e67be999746"
+handle = "new-pos"
+description = "A preact POS UI extension"
+
+# module: file that contains your extension’s source code
+# target: location where your extension appears in POS
+[[extensions.targeting]]
+module = "./src/Tile.jsx"
+target = "pos.home.tile.render"
+
+[[extensions.targeting]]
+module = "./src/Modal.jsx"
+target = "pos.home.modal.render"
+
